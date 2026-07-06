@@ -6,7 +6,7 @@
 /*   By: isbenmou <isbenmou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 22:44:44 by isbenmou          #+#    #+#             */
-/*   Updated: 2026/06/25 11:35:24 by isbenmou         ###   ########.fr       */
+/*   Updated: 2026/07/06 11:31:44 by isbenmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <pthread.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <sys/time.h>
 
 typedef struct s_data
 {
@@ -46,5 +47,11 @@ typedef struct s_coders
 
 long	ft_atoi_long(char *str);
 void	init(t_data *data, char **av);
+unsigned long long getmsseccond(void);
+unsigned long long get_albased_time(unsigned long long start);
+unsigned long long mssleep(unsigned long long sleeping);
+char check_time(unsigned long long start_timing, unsigned long long time);
+void create_threads(t_data data);
+void *function(void *ptr);
 
 #endif
