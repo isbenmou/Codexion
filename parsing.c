@@ -6,7 +6,7 @@
 /*   By: isbenmou <isbenmou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 22:46:17 by isbenmou          #+#    #+#             */
-/*   Updated: 2026/06/25 12:00:50 by isbenmou         ###   ########.fr       */
+/*   Updated: 2026/07/06 11:30:28 by isbenmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,5 @@ int	main(int ac, char **av)
 		return (printf("3adade dyale arguments 4alate ajmi :("), 1);
 	if (parser(&data, av) == 1)
 		return 1;
-	t_coders *coders = malloc(sizeof(t_coders) * data.number_of_coders);
-	t_dongels *dongels = malloc(sizeof(t_dongels) * data.number_of_coders);
-	if (dongels == NULL)
-		return (free(coders), 1);
-	int i = 0;
-	while (i < data.number_of_coders)
-	{
-		coders[i].counter = 0;
-		coders[i].left = &dongels[i];
-		coders[i].right = &dongels[((i+1) % data.number_of_coders)];
-		i++;
-	}
+	data = coders(data);
 }
