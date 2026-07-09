@@ -69,8 +69,8 @@ int	main(int ac, char **av)
 	t_data	data;
 
 	if (ac != 9)
-		return (printf("3adade dyale arguments 4alate ajmi :("), 1);
+		return (printf("3adade dyale arguments 4alate ajmi :(\n"), 1);
 	if (parser(&data, av) == 1)
 		return 1;
-	data = coders(data);
+	create_threads(data);
 }
