@@ -39,7 +39,8 @@ typedef struct s_dongels
 
 typedef struct s_coders
 {
-	pthread_t	id;
+	pthread_t	t;
+	int id;
 	int			counter;
 	t_dongels	*left;
 	t_dongels	*right;
@@ -52,6 +53,6 @@ unsigned long long get_albased_time(unsigned long long start);
 unsigned long long mssleep(unsigned long long sleeping);
 char check_time(unsigned long long start_timing, unsigned long long time);
 void create_threads(t_data data);
-void *function(void *ptr);
+void *routine(void *tmp);
 
 #endif
